@@ -1,11 +1,11 @@
 [user]
-	username = oliver-wahlen
+	name = oliver-wahlen
 	email = omwahlen@icloud.com
 [init]
-  defaultBranch = main
+	defaultBranch = main
 [color]
 	ui = auto
 [alias]
 	a = add .
 	c = commit -m
-	l = git log --all --graph --decorate --oneline
+	l = log --all --graph --decorate --oneline
