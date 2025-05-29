@@ -4,7 +4,7 @@
 DOTFILE_DIR=~/dotfiles
 
 #makes an array of the relevant files
-declare -a FILES=("bashrc" "vimrc" "gitconfig")
+declare -a FILES=("bashrc" "vimrc" "gitconfig" "tmux.conf")
 
 #force create symbolic links (use of curly brackets because of "advance" formating)
 for FILE in "${FILES[@]}"; do
