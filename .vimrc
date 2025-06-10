@@ -1,5 +1,33 @@
+
+" For use of vundle and stuff
 " Enables vim func instead of compatible with vi
-set nocompatible
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'dense-analysis/ale'
+
+let g:ale_linters = {
+\   'python': ['pylint'],
+\   'cpp': ['cpplint'],
+\}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " require
+
+" Enable Ale
+let g:ale_enabled = 1
+" Enable automatic fixing on save
+let g:ale_fix_on_save = 1
 
 " syntax highlighting.
 syntax on
@@ -48,3 +76,9 @@ inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
+" omnicomplete
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+

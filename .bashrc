@@ -130,10 +130,11 @@ export PATH="$PATH:/home/ouser/.local/bin"
 #customise current user + directory text
 export PS1="\[\e[32m\]\u:\[\e[m\]\[\e[34m\]\W\$\[\e[m\] " 
 
-#gives vim mode for the shell
-set -o vi
+
+
 
 alias py="python3"
 
 
 
+source /opt/ros/jazzy/setup.bash
