@@ -137,4 +137,8 @@ alias py="python3"
 
 
 
-source /opt/ros/jazzy/setup.bash
+# source /opt/ros/jazzy/setup.bash
+
+# Created by `pipx` on 2025-06-10 13:43:46
+export PATH="$PATH:/home/oliver/.local/bin"
+alias dnbash="docker exec -it scout-dev-noetic bash"
