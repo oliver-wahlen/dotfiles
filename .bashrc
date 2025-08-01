@@ -142,3 +142,26 @@ alias py="python3"
 # Created by `pipx` on 2025-06-10 13:43:46
 export PATH="$PATH:/home/oliver/.local/bin"
 alias dnbash="docker exec -it scout-dev-noetic bash"
+alias cpf="xclip -sel clip"
+
+# Run a container with gui access on a nvidia gpu computer
+gocker() {
+    # Allow local root access to X server
+    xhost +local:root > /dev/null 2>&1
+
+    # Run the container with GUI support and any additional arguments
+    docker run -it --rm \
+        -e DISPLAY=$DISPLAY \
+        -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+        -v $HOME/.ssh:/home/gz_sim/.ssh:ro \
+        -v $SSH_AUTH_SOCK:/ssh-agent \
+        -e SSH_AUTH_SOCK=/ssh-agent \
+        --device /dev/dri \
+        --privileged \
+        "$@"
+
+    # Revoke X server access after container exit for security
+    xhost -local:root > /dev/null 2>&1
+}
+
+source /opt/ros/jazzy/setup.bash

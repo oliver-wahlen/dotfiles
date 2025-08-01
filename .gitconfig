@@ -9,3 +9,5 @@
 	a = add .
 	c = commit -m
 	l = log --all --graph --decorate --oneline
+[core]
+	editor = vim

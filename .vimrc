@@ -18,6 +18,7 @@ Plugin 'dense-analysis/ale'
 let g:ale_linters = {
 \   'python': ['pylint'],
 \   'cpp': ['cpplint'],
+\   'sh': ['shellcheck'],
 \}
 
 " All of your Plugins must be added before the following line
@@ -28,6 +29,9 @@ filetype plugin indent on    " require
 let g:ale_enabled = 1
 " Enable automatic fixing on save
 let g:ale_fix_on_save = 1
+
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
 
 " syntax highlighting.
 syntax on
