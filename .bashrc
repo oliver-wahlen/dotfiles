@@ -163,4 +163,3 @@ gocker() {
     xhost -local:root > /dev/null 2>&1
 }
 
-source /opt/ros/jazzy/setup.bash
